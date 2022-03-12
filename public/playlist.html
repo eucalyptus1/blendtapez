@@ -1,34 +1,79 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BlendTapez</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BlendTapez</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+
+<body>
 
   <section class="section">
     <div class="container">
-      <h1 class="title">
+      <h1 class="title is-1">
         BlendTapez
       </h1>
-      <p class="subtitle">
+      <p class="subtitle is-3">
         A website for <strong>Playlists</strong> made by you!
       </p>
     </div>
   </section>
 
   <section class="section">
-      <div class="container subtitle is-3">
-          <h1>Make a playlist</h1>
+
+    <div class="columns track-list">
+      <div class="column">
+        <p class="subtitle is-4 has-text-centered">Playlist Details</p>
+        <div class="columns is-mobile">
+          <div class="column">
+            <form class="box">
+              <div class="field">
+                <label class="label">Name Your Playlist</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter Name Here">
+                </div>
+              </div>
+            </form>
+
+            <form class="box">
+              <div class="field">
+                <label class="label">Add a Track</label>
+                <div class="control">
+                  <input class="input" type="text" name="track-name" placeholder="Enter Name Here">
+                </div>
+              </div>
+            
+              <div class="field">
+                <label class="label">Track Link</label>
+                <div class="control">
+                  <input class="input" type="url" name="track-link" placeholder="Enter Track Link Here">
+                </div>
+              </div>
+            </form>
+            <button class="button is-primary" id="add-track">Add A Track</button>
+            
+          </div>
+        </div>
       </div>
-      <div class="container control">
-        <input class="input" type="text" placeholder="Playlist Name">
+      <div class="column">
+        <p class="subtitle is-4 has-text-centered">Select Your Cover Art</p>
+        <div class="columns is-mobile">
+          <div class="column">
+            <img src="/public/images/vinyl_small.png">
+            <img src="/public/images/cassette_small.png">
+          </div>
+          <div class="column">
+            <img src="/public/images/cd_small.png">
+            <img src="/public/images/cassette_small.png">
+          </div>
+        </div>
       </div>
-      <div class="container control ">
-        <button class="button is-primary">Submit</button>
-      </div>
+    </div>
+
   </section>
-  </body>
+  <script src="/utils/make-playlist.js"></script>
+</body>
+
 </html>
