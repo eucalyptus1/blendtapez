@@ -1,24 +1,40 @@
-header {
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1%;
-  }
-  
-  header h1 {
-    font-size: 1em;
-  }
-
-  header nav a {
-    margin: 10px 0;
-    padding: 0 20px;
+html,body {
+  font-family: 'Questrial', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+.hero.is-success {
+  background: #F2F6FA;
+}
+.hero .nav, .hero.is-success .nav {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.box {
+  margin-top: 5rem;
+}
+input {
+  font-weight: 300;
+}
+p {
+  font-weight: 700;
+}
+p.subtitle {
+  padding-top: 1rem;
 }
 
-body, html {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-    color: #333;
-  }
+.login-hr{
+  border-bottom: 1px solid black;
+}
+
+.has-text-black{
+  color: black;
+}
+
+.field{
+  padding-bottom: 10px;
+}
+
+.fa{
+  margin-left: 5px; 
+}
