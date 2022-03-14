@@ -2,62 +2,83 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BlendTapez</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="C:\Users\oharr\OneDrive\Desktop\projects\blendtapez\blendtapez\style\style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BlendTapez</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="C:\Users\oharr\OneDrive\Desktop\projects\blendtapez\blendtapez\style\style.css">
 </head>
 
 <body>
   <header>
     <nav class="navbar is-black" class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
+      <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item">
-                    Login
-                </a>
-                <a class="navbar-item">
-                    Home
-                </a>
-                <a class="navbar-item">
-                    Your Profile
-                </a>
-                <a class="navbar-item">
-                    Playlist Page
-                </a>
-            </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item">
+            Login
+          </a>
+          <a class="navbar-item">
+            Home
+          </a>
+          <a class="navbar-item">
+            Your Profile
+          </a>
+          <a class="navbar-item">
+            Playlist Page
+          </a>
         </div>
-        </div>
+      </div>
+      </div>
     </nav>
   </header>
 
-  <section class="section">
-    <section class="hero is-medium is-link">
-      <div class="hero-body">
-        <img src="pub"
-        <p class="title">
-          My Playlist
-        </p>
-        <p class="subtitle">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolor minima exercitationem, 
-          eligendi sunt architecto eaque nisi hic optio mollitia asperiores inventore deleniti doloremque 
-          doloribus tenetur ipsam dignissimos eum quo.
-        </p>
-      </div>
-    </section>
+
+  <section class="hero is-small has-background-light">
+    <div class="hero-body has-text-centered">
+      <img src="/public/images/cassette_small.png">
+      <p class="title p-2">
+        My Playlist
+      </p>
+      <p class="subtitle mx-5">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolor minima exercitationem,
+        eligendi sunt architecto eaque nisi hic optio mollitia asperiores inventore deleniti doloremque
+        doloribus tenetur ipsam dignissimos eum quo.
+      </p>
+    </div>
   </section>
 
-  
+  <section class="section is-horizontal">
+    <table class="table is-fullwidth is-hoverable">
+      <thead>
+        <tr>
+          <th>Track #</th>
+          <th>Track Name</th>
+          <th>Track Link</th>
+          <th>Alternate Links</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>I Wonder</td>
+          <td><a href="https://www.youtube.com/watch?v=UYXa2yBF5ms" title="I Wonder Kanye West">MainLink</a></td>
+          <td><a href="https://open.spotify.com/track/4jQqM4NI79HEcWHUJb8Hvf?si=96dbe358eeca4bc9">Alternate Link</a></td>
+        </tr>
+      </tbody>
+
+    </table>
+  </section>
+
+
+
 </body>
 
 </html>
