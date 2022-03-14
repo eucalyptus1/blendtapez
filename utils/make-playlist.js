@@ -1,12 +1,3 @@
-var trackListEl = document.querySelector("#track-list")
-
-
-var addTrackHandler = function {
-
-  var trackNameInput = document.querySelector("input[name='track-name']").value;
-  var trackLinkInput = document.querySelector("input[name='track-link']").value;
-
-}
 
 var trackListEl = document.querySelector("#track-list");
 var trackButtonEl = document.querySelector("#add-track");
@@ -29,12 +20,19 @@ function getVideo() {
   fetch(`${api}`).then(function(response) {
     response.json().then(function(data) {
       console.log(data);
-    });
+      return data;
+    })
+    .then(function(response){
+      vid = data.html;
+    })
+    .then(function(){
+      displayVideo();
+    })
   });
   
 
-      //  .then(response => response.json())
-      //  .then(json => {console.log(json)})
+    //    .then(response => response.json())
+    //    .then(json => {console.log(json)})
     //   .then(function(response){
     //       let data = response.json();
     //       console.log(data);
@@ -55,9 +53,9 @@ jQuery.ajaxPrefilter(function(options) {
 });
 
 
-// function displayVideo () {
-//   videoEl.innerHTML = `${vid}`;
+function displayVideo () {
+  videoEl.innerHTML = `${vid}`;
   
-// };
+};
 
 trackButtonEl.addEventListener("click", addTrackHandler);
