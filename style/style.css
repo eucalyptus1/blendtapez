@@ -1,4 +1,5 @@
 html,body {
+<<<<<<< HEAD
   font-family: 'Questrial', sans-serif;
   font-size: 14px;
   font-weight: 300;
@@ -39,3 +40,50 @@ p.subtitle {
   margin-left: 5px; 
 }
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+=======
+    font-family: 'Questrial', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.hero.is-success {
+    background: #F2F6FA;
+}
+
+.hero .nav, .hero.is-success .nav {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.box {
+    margin-top: 5rem;
+}
+
+input {
+    font-weight: 300;
+}
+
+p {
+    font-weight: 700;
+}
+
+p.subtitle {
+    padding-top: 1rem;
+}
+  
+.login-hr{
+    border-bottom: 1px solid black;
+}
+  
+.has-text-black{
+    color: black;
+}
+  
+.field{
+    padding-bottom: 10px;
+}
+  
+.fa{
+    margin-left: 5px; 
+}
+>>>>>>> 3172935d1b5ee923fc8e11ff92c0d18f62e9bb77
