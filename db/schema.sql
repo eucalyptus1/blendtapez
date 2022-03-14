@@ -1,4 +1,8 @@
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS account;
+DROP TABLE IF EXISTS playlist;
+DROP TABLE IF EXISTS track;
+DROP TABLE IF EXISTS album;
 
 CREATE TABLE users (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -15,13 +19,12 @@ CREATE TABLE account (
 CREATE TABLE playlist (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     track_name VARCHAR(20) NOT NULL,
-    cover_art INTEGER,
 );
 
 CREATE TABLE track (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     track_name VARCHAR(20) NOT NULL,
-    track_link NOT NULL,
+    track_link TEXT NOT NULL,
 );
 
 CREATE TABLE album (
