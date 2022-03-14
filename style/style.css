@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 html,body {
   font-family: 'Questrial', sans-serif;
   font-size: 14px;
@@ -39,6 +38,4 @@ p.subtitle {
 .fa{
   margin-left: 5px; 
 }
-=======
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
->>>>>>> d79a45aacdf7e6a54fa535822a48acb6dd010b04
