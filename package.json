@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "bulma": "^0.9.3",
+    "express-handlebars": "^6.0.3"
+  }
+}
