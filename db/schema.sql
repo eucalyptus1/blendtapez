@@ -13,22 +13,22 @@ CREATE TABLE users (
 
 CREATE TABLE account (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    playlist VARCHAR(10) NOT NULL
+    playlist VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE playlist (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    track_name VARCHAR(20) NOT NULL,
+    track_name VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE track (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    track_name VARCHAR(20) NOT NULL,
-    track_link TEXT NOT NULL,
+    track_name VARCHAR(30) NOT NULL,
+    track_link TEXT NOT NULL
 );
 
 CREATE TABLE album (
-    id INTEGER AUTO_INCREMENT PRIMARY,
-    image_id INTEGER NOT NULL,
-    image_path NOT NULL
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    cover_art INTEGER NOT NULL,
+    image_path TEXT NOT NULL
 );
