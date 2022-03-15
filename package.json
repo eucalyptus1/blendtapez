@@ -21,6 +21,7 @@
     "express": "^4.17.3",
     "express-handlebars": "^6.0.3",
     "bulma": "^0.9.3",
+    "oembed": "^0.1.2",
     "mysql2": "^2.3.3"
   }
 }
