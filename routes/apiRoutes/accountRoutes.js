@@ -1,58 +1,62 @@
-const express = require('express');
-const router = express.Router();
-const db = require('../../db/connection');
+const router = require('express').Router();
+const { Account, Track, Users, Album } = require('../../models');
 
 //Get all playlists+album cover choice
-router.get('/profile', (req, res) => {
-    const sql = `SELECT * FROM account`;
-  
-    db.query(sql, (err, rows) => {
-      if (err) {
-        res.status(500).json({ error: err.message });
-        return;
-      }
-      res.json({
-        message: 'success',
-        data: rows,
-      });
+router.get('/', (req, res) => {
+//access Account model and run .findAll()
+    Account.findAll({
+      attributes: ['id', 'playlist', 'image_path'],
+      include: [
+        {
+          model: Album,
+          attributes: ['id']
+        }
+      ]
+    })
+    .then(dbAccountData => res.json(dbAccountData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
 //get a single playlist+album cover
-router.get('/profile/:id', (req, res) => {
-    const sql = `SELECT * FROM account WHERE id = ?`;
-    const params = [req.params.id];
-  
-    db.query(sql, params, (err, row) => {
-      if (err) {
-        res.status(400).json({ error: err.message });
-        return;
-      }
-      res.json({
-        message: 'success',
-        data: row
-      });
+router.get('/:id', (req, res) => {
+    Account.findOne({
+        where: {
+            id:req.params.id
+        }
+    })
+    .then(dbUserData => {
+        if (!dbUserData) {
+          res.status(404).json({ message: 'A playlist does not exist with this id' });
+          return;
+        }
+        res.json(dbUserData);
+    })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
     });
 });
 
 //Delete single playlist
-router.delete('/profile/:id', (req, res) => {
-    const sql = `DELETE FROM account WHERE id = ?`;
-  
-    db.query(sql, req.params.id, (err, result) => {
-      if (err) {
-        res.status(400).json({ error: res.message });
-      } else if (!result.affectedRows) {
-        res.json({
-          message: 'Playlist not found'
-        });
-      } else {
-        res.json({
-          message: 'deleted',
-          changes: result.affectedRows,
-          id: req.params.id
-        });
+router.delete('/:id', (req, res) => {
+    Account.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbUserData => {
+      if (!dbUserData) {
+        res.status(404).json({ message: 'No playlist found with this id' });
+        return;
       }
+      res.json(dbUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
@@ -61,24 +65,17 @@ router.delete('/profile/:id', (req, res) => {
 //"playlist": "tester",
 //"image_path": 2
 //}
-router.post('/profile', ({ body }, res) => {
- 
-    const sql = `INSERT INTO account (playlist, image_path) VALUES (?,?)`;
-    const params = [
-      body.playlist,
-      body.image_path,
-    ];
-  
-    db.query(sql, params, (err, result) => {
-      if (err) {
-        res.status(400).json({ error: err.message });
-        return;
-      }
-      res.json({
-        message: 'success',
-        data: body
-      });
+router.post('/', (req, res) => {
+    Account.create({
+        id: req.body.id,
+        playlist: req.body.playlist,
+        image_path: req.body.image_path
+    })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
-  });
+});
 
 module.exports = router;
