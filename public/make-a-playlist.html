@@ -58,7 +58,8 @@
   <!-- Container with 2 columns -->
   <section class="section">
 
-    <div class="columns track-list">
+    <!--removed track-list class. will re-add if problems occur-->
+    <div class="columns">
       <div class="column">
         <p class="subtitle is-4 has-text-centered">Playlist Details</p>
         <div class="columns is-mobile">
@@ -67,7 +68,7 @@
               <div class="field">
                 <label class="label">Name Your Playlist</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Enter Name Here">
+                  <input class="input" id="playlist-input" type="text" name="playlist-name" placeholder="Enter Name Here">
                 </div>
               </div>
             </form>
@@ -87,7 +88,7 @@
                   <input class="input" type="url" id="form-link" name="track-link" placeholder="Enter Track Link Here">
                 </div>
               </div>
-              <button class="button is-primary">Add A Track</button>
+              <button class="button is-primary" id="track-submit">Add A Track</button>
             </form>
             <!-- BUTTON TO ADD TRACK WITH TRACK ID -->
             
@@ -99,19 +100,22 @@
         <p class="subtitle is-4 has-text-centered">Select Your Cover Art</p>
         <div class="columns is-mobile">
           <div class="column">
-            <img src="/public/images/vinyl_small.png">
-            <img src="/public/images/cassette_small.png">
+            <img src="../public/images/vinyl_small.png">
+            <img src="../public/images/cassette_small.png">
           </div>
           <div class="column">
-            <img src="/public/images/cd_small.png">
-            <img src="/public/images/cassette_small.png">
+            <img src="../public/images/cd_small.png">
+            <img src="../public/images/cassette_small.png">
           </div>
         </div>
       </div>
     </div>
 
-    <div id="video-player">
-
+    <div class="box" id="created-playlist">
+      <h2 id="playlist-title"></h2>
+      <button class="is-primary" id="playlist-submit">Submit</button>
+      <ol id="track-list"></ol>
+      <div id="video-player"></div>
     </div>
 
   </section>
