@@ -26,7 +26,9 @@ function getVideo() {
     .then(function(data) {
     console.log(data);
     var vid = data.html;
+    var title = data.title;
     console.log(vid);
+    console.log(title);
     videoEl.innerHTML = `${vid}`;
     }) 
   })
@@ -44,9 +46,9 @@ function getVideo() {
 // });
 
 
-function displayVideo (vid) {
-  videoEl.innerHTML = `${vid}`;
-};
+// function displayVideo (vid) {
+//   videoEl.innerHTML = `${vid}`;
+// };
 
 
 
