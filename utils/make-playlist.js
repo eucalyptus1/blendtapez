@@ -60,8 +60,9 @@ function getVideo() {
     var link = data.author_url;
     if (!trackNameInput) {
         var track = document.createElement("li");
-        track.setAttribute("track-id", trackAmount);
+        // track.setAttribute("track-id", trackAmount);
         track.setAttribute('href', `${link}`);
+        track.setAttribute('class', 'is-4');
         track.innerHTML = `${title}`;
         trackListEl.appendChild(track);
     } else {
