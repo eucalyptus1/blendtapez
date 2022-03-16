@@ -2,10 +2,10 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // create our Post model
-class Post extends Model {}
+class Track extends Model {}
 
 // create fields/columns for Post model
-Post.init(
+Track.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -17,12 +17,16 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    track_url: {
+    track_link: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         isURL: true
       }
+    },
+    post_url: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -40,4 +44,4 @@ Post.init(
   }
 );
 
-module.exports = Post;
+module.exports = Track;
