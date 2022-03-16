@@ -1,10 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// create our Post model
+
 class Playlist extends Model {}
 
-// create fields/columns for Post model
 Playlist.init(
   {
     id: {
@@ -13,18 +12,11 @@ Playlist.init(
       primaryKey: true,
       autoIncrement: true
     },
-    track_name: {
+    playlist_name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    track_link: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isURL: true
-      }
-    },
-    post_url: {
+    playlist_url: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -40,7 +32,7 @@ Playlist.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'post'
+    modelName: 'playlist'
   }
 );
 
