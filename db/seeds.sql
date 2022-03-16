@@ -1,10 +1,19 @@
 INSERT INTO users(email, passcode, username)
 VALUES
     ('fakeemail@gmail.com', 'pass1234', 'fakeuser');
+  
+INSERT INTO album(cover_art, image_path)
+VALUES 
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5),
+    (6, 6);
 
-INSERT INTO account (playlist)
+INSERT INTO account (playlist, image_path)
 VALUES
-    ('The Dark Pool');
+    ('The Dark Pool', 2);
 
 INSERT INTO playlist(track_name)
 VALUES
@@ -33,12 +42,3 @@ VALUES
     ('Netherplace', 'https://www.youtube.com/watch?v=Li6FfvYJcCw&list=PLzZJYSfsqmuyV3QzqGrKKEJ_URpsVWSQD&index=10'),
     ('Where We Go When We Die', 'https://www.youtube.com/watch?v=XfFAWT0iF44&list=PLzZJYSfsqmuyV3QzqGrKKEJ_URpsVWSQD&index=11'),
     ('Views From The Sun', 'youtube.com/watch?v=slEjnPUmNDM&list=PLzZJYSfsqmuyV3QzqGrKKEJ_URpsVWSQD');
-
-INSERT INTO album(cover_art, image_path)
-VALUES 
-    (1,'tape1'),
-    (2,'tape2'),
-    (3,'tape3'),
-    (4,'tape4'),
-    (5,'tape5'),
-    (6,'tape6');

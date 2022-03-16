@@ -1,8 +1,9 @@
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS album;
 DROP TABLE IF EXISTS account;
 DROP TABLE IF EXISTS playlist;
 DROP TABLE IF EXISTS track;
-DROP TABLE IF EXISTS album;
+
 
 CREATE TABLE users (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -11,9 +12,20 @@ CREATE TABLE users (
     username VARCHAR(15) NOT NULL
 );
 
+CREATE TABLE album (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    cover_art INTEGER NOT NULL,
+    image_path INTEGER NOT NULL
+);
+
 CREATE TABLE account (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    playlist VARCHAR(20) NOT NULL
+    playlist VARCHAR(20) NOT NULL,
+    image_path INTEGER,
+    CONSTRAINT fk_image
+        FOREIGN KEY (image_path)
+        REFERENCES album(id)
+        ON DELETE SET NULL
 );
 
 CREATE TABLE playlist (
@@ -25,10 +37,4 @@ CREATE TABLE track (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     track_name VARCHAR(30) NOT NULL,
     track_link TEXT NOT NULL
-);
-
-CREATE TABLE album (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    cover_art INTEGER NOT NULL,
-    image_path TEXT NOT NULL
 );
