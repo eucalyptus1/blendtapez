@@ -2,10 +2,10 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // create our Post model
-class Track extends Model {}
+class Playlist extends Model {}
 
 // create fields/columns for Post model
-Track.init(
+Playlist.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -44,4 +44,4 @@ Track.init(
   }
 );
 
-module.exports = Track;
+module.exports = Playlist;
