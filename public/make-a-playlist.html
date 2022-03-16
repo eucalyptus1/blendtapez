@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BlendTapez</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 </head>
 
@@ -74,7 +73,7 @@
             </form>
 
             <!-- NEED FORM ID TO DYNAMICALLY GENERATE ENTIRE BOX -->
-            <form class="box">
+            <form class="box form-el">
               <div class="field">
                 <label class="label">Add a Track</label>
                 <div class="control">
@@ -85,12 +84,13 @@
               <div class="field">
                 <label class="label">Track Link</label>
                 <div class="control">
-                  <input class="input" id="form" type="url" name="track-link" placeholder="Enter Track Link Here">
+                  <input class="input" type="url" id="form-link" name="track-link" placeholder="Enter Track Link Here">
                 </div>
               </div>
+              <button class="button is-primary">Add A Track</button>
             </form>
             <!-- BUTTON TO ADD TRACK WITH TRACK ID -->
-            <button class="button is-primary" id="add-track">Add A Track</button>
+            
             
           </div>
         </div>
@@ -99,12 +99,12 @@
         <p class="subtitle is-4 has-text-centered">Select Your Cover Art</p>
         <div class="columns is-mobile">
           <div class="column">
-            <img src="../public/images/vinyl_small.png">
-            <img src="../public/images/cassette_small.png">
+            <img src="/public/images/vinyl_small.png">
+            <img src="/public/images/cassette_small.png">
           </div>
           <div class="column">
-            <img src="../public/images/cd_small.png">
-            <img src="..public/images/cassette_small.png">
+            <img src="/public/images/cd_small.png">
+            <img src="/public/images/cassette_small.png">
           </div>
         </div>
       </div>
@@ -115,7 +115,8 @@
     </div>
 
   </section>
-  <script src="/utils/make-playlist.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="../utils/make-playlist.js"></script>
 </body>
 
 </html>

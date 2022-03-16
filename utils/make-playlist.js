@@ -1,61 +1,54 @@
 
 var trackListEl = document.querySelector("#track-list");
-var trackButtonEl = document.querySelector("#add-track");
+var trackButtonEl = document.querySelector("button");
 var videoEl = document.querySelector("#video-player");
-var trackNameInput = document.querySelector("#title").value;
-var trackLinkInput = document.querySelector("#form").value;
-// const video = {};
+var formEl = document.querySelector("#form-el");
 
 
-var addTrackHandler = function(event) {
+
+
+var addTrack = function(event) {
   event.preventDefault();
-  console.dir(trackLinkInput);
+  var trackNameInput = document.querySelector("input[name='track-name']").value;
+  var trackLinkInput = document.querySelector("input[name='track-link']").value;
+  console.log(trackLinkInput);
+
   getVideo();
 };
 
-
 function getVideo() {
-  var api = `https://cors-anywhere.herokuapp.com/https://www.noembed.com/embed?dataType=json&url=${trackLinkInput}`;
-  
-  fetch(`${api}`).then(function(response) {
-    response.json().then(function(data) {
-      console.log(data);
-      return data;
-    })
-    .then(function(response){
-      vid = data.html;
-    })
-    .then(function(){
-      displayVideo();
-    })
-  });
-  
+    var trackLinkInput = document.querySelector("input[name='track-link']").value;
+    const api = `https://www.youtube.com/oembed?format=json&url=${trackLinkInput}`
 
-    //    .then(response => response.json())
-    //    .then(json => {console.log(json)})
-    //   .then(function(response){
-    //       let data = response.json();
-    //       console.log(data);
-    //       return data;
-    //   })
-    //   .then(function(response){
-    //   vid = data.html;
-    //   })
-    //   .then(function(){
-    //    displayVideo();
-    // });
+    fetch(`${api}`)
+    .then(function(response) {
+    response.json()
+    .then(function(data) {
+    console.log(data);
+    var vid = data.html;
+    console.log(vid);
+    videoEl.innerHTML = `${vid}`;
+    }) 
+  })
 };
 
-jQuery.ajaxPrefilter(function(options) {
-  if (options.crossDomain && jQuery.support.cors) {
-      options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-  }
-});
 
 
-function displayVideo () {
+
+
+
+// jQuery.ajaxPrefilter(function(options) {
+//   if (options.crossDomain && jQuery.support.cors) {
+//       options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+//   }
+// });
+
+
+function displayVideo (vid) {
   videoEl.innerHTML = `${vid}`;
-  
 };
 
-trackButtonEl.addEventListener("click", addTrackHandler);
+
+
+
+trackButtonEl.addEventListener("click", addTrack);
