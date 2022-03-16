@@ -45,7 +45,7 @@ function getVideo() {
   //  var playlistForm = document.getElementById("input[name='playlist-name']").value;
    var trackNameInput = document.querySelector("input[name='track-name']").value;
    var trackLinkInput = document.querySelector("input[name='track-link']").value;
-   const api = `https://www.youtube.com/oembed?format=json&url=${trackLinkInput}`
+   const api = `https://www.youtube.com/oembed?format=json&maxwidth=400&maxheight=260&url=${trackLinkInput}`
 
     fetch(`${api}`)
     .then(function(response) {
