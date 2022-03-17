@@ -61,10 +61,11 @@ function getVideo() {
     if (!trackNameInput) {
         var track = document.createElement("li");
         // track.setAttribute("track-id", trackAmount);
-        track.setAttribute('href', `${link}`);
+        // track.setAttribute('href', `${link}`);
         track.setAttribute('class', 'is-4');
-        track.innerHTML = `${title}`;
+        track.innerText = `${title}`;
         trackListEl.appendChild(track);
+
     } else {
       trackNameEl.innerHTML = trackNameInput;
       track.setAttribute("track-id", trackAmount);
@@ -72,7 +73,8 @@ function getVideo() {
       trackListEl.appendChild(track);
     }
     }) 
-    
+     document.querySelector("input[name='track-link']").value = "";
+     document.querySelector("input[name='track-name']").value = "";
   })
 };
 
