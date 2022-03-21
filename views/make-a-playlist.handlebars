@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BlendTapez</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+
+<body>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title is-1">
+        BlendTapez
+      </h1>
+      <p class="subtitle is-3">
+        A website for <strong>Playlists</strong> made by you!
+      </p>
+    </div>
+  </section>
+
+  <header>
+    <nav class="navbar is-black" class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">
+                    Login
+                </a>
+
+                <a class="navbar-item">
+                    Home
+                </a>
+
+                <a class="navbar-item">
+                    Your Profile
+                </a>
+
+                <a class="navbar-item">
+                    Playlist Page
+                </a>
+            </div>
+        </div>
+        </div>
+    </nav>
+</header>
+
+  <!-- Container with 2 columns -->
+  <section class="section">
+
+    <!--removed track-list class. will re-add if problems occur-->
+    <div class="columns">
+      <div class="column">
+        <p class="subtitle is-4 has-text-centered">Playlist Details</p>
+        <div class="columns is-mobile">
+          <div class="column">
+            <form class="box">
+              <div class="field">
+                <label class="label">Name Your Playlist</label>
+                <div class="control">
+                  <input class="input" id="playlist-input" type="text" name="playlist-name" placeholder="Enter Name Here">
+                </div>
+              </div>
+            </form>
+
+            <!-- NEED FORM ID TO DYNAMICALLY GENERATE ENTIRE BOX -->
+            <form class="box form-el">
+              <div class="field">
+                <label class="label">Add a Track</label>
+                <div class="control">
+                  <input class="input" id="title" type="text" name="track-name" placeholder="Enter Name Here">
+                </div>
+              </div>
+            
+              <div class="field">
+                <label class="label">Track Link</label>
+                <div class="control">
+                  <input class="input" type="url" id="form-link" name="track-link" placeholder="Enter Track Link Here">
+                </div>
+              </div>
+              <button class="button is-primary" id="track-submit">Add A Track</button>
+            </form>
+            <!-- BUTTON TO ADD TRACK WITH TRACK ID -->
+            
+            
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <p class="subtitle is-4 has-text-centered">Select Your Cover Art</p>
+        <div class="columns is-mobile">
+          <div class="column">
+            <img id="img1" src="../public/images/vinyl_small.png">
+            <img id="img2" src="../public/images/cassette_small.png">
+          </div>
+          <div class="column">
+            <img id="img3" src="../public/images/cd_small.png">
+            <img id="img4" src="../public/images/cassette_small.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column" id="created-playlist">
+      <div>
+      <p class="subtitle is-4">Preview</p>
+      <p id="playlist-title"></p>
+      <ol id="track-list"></ol>
+      <div id="video-player"></div>
+      <button class="is-primary" id="playlist-submit">Submit</button>
+      </div>
+    </div>
+
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="../utils/make-playlist.js"></script>
+</body>
+
+</html>
