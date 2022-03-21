@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.listen(PORT, () => {
-    console.log('server running on port ${PORT}');
+    console.log(`server running on port ${PORT}`);
 });
 
 // Use apiRoutes
