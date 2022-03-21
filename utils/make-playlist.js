@@ -64,16 +64,15 @@ function getVideo() {
     videoEl.innerHTML = `${vid}`;
     //take video title data
     var title = data.title;
-    var link = data.author_url;
     if (!trackNameInput) {
     var trackObj = {
       name: `${title}`,
-      link: `${link}`
+      link: trackLinkInput
     };
   } else {
     var trackObj = {
       name: trackNameInput,
-      link: `${link}`
+      link: trackLinkInput
     };
   }
     console.log(trackObj);
@@ -88,7 +87,6 @@ function getVideo() {
 // function to append tracks into preview div and create unique properties before submit
 function createTrackEl (trackObj) {
   var trackNameInput = document.querySelector("input[name='track-name']").value;
-  var trackLinkInput = document.querySelector("input[name='track-link']").value;
 
   if (!trackNameInput) {
     var track = document.createElement("li");
