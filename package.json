@@ -20,7 +20,9 @@
   "dependencies": {
     "bulma": "^0.9.3",
     "express": "^4.17.3",
-    "express-handlebars": "^6.0.3",
+    "express-handlebars": "^4.0.2",
+    "handlebars": "^4.7.7",
+    "mime": "^3.0.0",
     "mysql2": "^2.3.3",
     "oembed": "^0.1.2",
     "qs": "^6.10.3"
