@@ -2,9 +2,9 @@
   "name": "blendtapez",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "",
   "scripts": {
-    "start": "node server.js",
+    "start": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,13 +19,6 @@
   },
   "homepage": "https://github.com/eucalyptus1/blendtapez#readme",
   "dependencies": {
-    "bulma": "^0.9.3",
-    "express": "^4.17.3",
-    "express-handlebars": "^4.0.2",
-    "handlebars": "^4.7.7",
-    "mime": "^3.0.0",
-    "mysql2": "^2.3.3",
-    "oembed": "^0.1.2",
-    "qs": "^6.10.3"
+    "express": "^4.17.3"
   }
 }
