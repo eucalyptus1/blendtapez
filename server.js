@@ -1,4 +1,4 @@
-// const { animals } = require('./data/animals');
+// const { playlists } = require('./data/playlists');
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
@@ -9,8 +9,8 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// app.get('/api/animals', (req, res) => {
-//   let results = animals;
+// app.get('/api/playlists', (req, res) => {
+//   let results = playlists;
 //   console.log(req.query)
 //   res.json(results);
 // });
@@ -26,21 +26,20 @@ function createNewPlaylist(body, playlistsArray) {
   return playlist;
 }
 
-// function validatePlaylist(playlist) {
-//   if (!animal.name || typeof animal.name !== 'string') {
-//     return false;
-//   }
-//   if (!animal.species || typeof animal.species !== 'string') {
-//     return false;
-//   }
-//   if (!animal.diet || typeof animal.diet !== 'string') {
-//     return false;
-//   }
-//   if (!animal.personalityTraits || !Array.isArray(animal.personalityTraits)) {
-//     return false;
-//   }
-//   return true;
-// }
+app.get('/playlists', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/playlist.html'));
+});
+
+function validatePlaylist(playlist) {
+  if (!playlist.name || typeof playlist.name !== 'string') {
+    return false;
+  }
+  if (!playlist.link || typeof playlist.link !== 'string') {
+    return false;
+  }
+
+  return true;
+}
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/profile.html'));
