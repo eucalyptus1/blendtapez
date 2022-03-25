@@ -1,5 +1,5 @@
 //playlist arrays
-var playlist = [];
+var playlistArr = [];
 var playlistIdCounter = 0;
  
 var trackIdCounter = 0;
@@ -40,7 +40,7 @@ var addTrack = function(event) {
     return false;
   } else {
     playlistTitle.innerHTML = playlistFormInput;
-    playlist.push(playlistFormInput);
+    playlistArr.push(playlistFormInput);
   }
 
   getVideo();
@@ -51,7 +51,7 @@ function getVideo() {
   //  var playlistFormInput = document.getElementById("input[name='playlist-name']").value;
    var trackNameInput = document.querySelector("input[name='track-name']").value;
    var trackLinkInput = document.querySelector("input[name='track-link']").value;
-   var playlist = [];
+   var playlistArr = [];
    const api = `https://www.youtube.com/oembed?format=json&maxwidth=400&maxheight=260&url=${trackLinkInput}`
 
     fetch(`${api}`)
@@ -98,8 +98,8 @@ function createTrackEl (trackObj) {
     trackIdCounter += 1;
     track.appendChild(a);
     trackListEl.appendChild(track);
-    playlist.push(trackObj);
-    console.log(playlist);
+    playlistArr.push(trackObj);
+    console.log(playlistArr);
 
 } else {
   var track = document.createElement("li");
@@ -111,15 +111,15 @@ function createTrackEl (trackObj) {
   trackIdCounter += 1;
   track.appendChild(a);
   trackListEl.appendChild(track);
-  playlist.push(trackObj);
-  console.log(playlist);
+  playlistArr.push(trackObj);
+  console.log(playlistArr);
 }
 };
 
 // function to submit completed playlist into local storage
 function submitPlaylist(event) {
   event.preventDefault();
-  localStorage.setItem("playlist", JSON.stringify(playlist));
+  localStorage.setItem("playlistArr", JSON.stringify(playlistArr));
   playlistIdCounter += 1;
   document.querySelector("input[name='track-name']").value = "";
 };
