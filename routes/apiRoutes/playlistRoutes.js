@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { findById, createNewPlaylist, validatePlaylist } = require('../../lib/playlist');
 const { playlists } = require('../../data/playlists');
 
-route.get('/playlists', (req, res) => {
+router.get('/playlists', (req, res) => {
   let results = playlists;
   if (req.query) {
     results = filterByQuery(req.query, results);
@@ -10,7 +10,7 @@ route.get('/playlists', (req, res) => {
   res.json(results);
 });
 
-route.get('/playlists/:id', (req, res) => {
+router.get('/playlists/:id', (req, res) => {
   const result = findById(req.params.id, playlists);
   if (result) {
     res.json(result);
@@ -19,7 +19,7 @@ route.get('/playlists/:id', (req, res) => {
   }
 });
 
-route.post('/playlists', (req, res) => {
+router.post('/playlists', (req, res) => {
   // set id based on what the next index of the array will be
   req.body.id = playlists.length.toString();
 

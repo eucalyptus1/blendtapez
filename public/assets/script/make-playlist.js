@@ -130,7 +130,7 @@ function submitPlaylist(event) {
   // console.log(playlistObj);
   playlistIdCounter += 1;
   
-  fetch('/api/playlist', {
+  fetch('/api/playlists', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
