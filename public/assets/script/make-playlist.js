@@ -136,6 +136,7 @@ function submitPlaylist(event) {
       Accept: 'application/json',
       'Content-Type': 'application/json'
     },
+    crossDomain: 'true',
     body: JSON.stringify(playlistObj)
   })
     .then(response => {
