@@ -11,7 +11,6 @@ const app = express();
 
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
-const path = require('path');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -19,7 +18,7 @@ app.use(express.json());
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static('/public'));
 
 // app.use(cors({
 //   origin: '*',
