@@ -6,7 +6,7 @@ router.get('/playlist', (req, res) => {
 });
 
 app.get('/make-a-playlist', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/make-a-playlist.html'));
+    res.sendFile(path.join(__dirname, '../public/make-a-playlist.html'));
   });
 
 

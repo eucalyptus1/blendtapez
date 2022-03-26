@@ -26,8 +26,8 @@ route.post('/playlists', (req, res) => {
   if (!validatePlaylist(req.body)) {
     res.status(400).send('Playlist is not correctly formatted');
   } else {
-    const playlists = createNewPlaylist(req.body, playlists);
-    res.json(playlists);
+    const playlist = createNewPlaylist(req.body, playlists);
+    res.json(playlist);
   }
 });
 
