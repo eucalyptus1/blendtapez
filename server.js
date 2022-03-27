@@ -5,10 +5,15 @@ const sequelize = require('./config/connection');
 
 
 const app = express();
-// const cors = require('cors');
+const cors = require('cors');
 
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
+
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'DELETE']
+}));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -19,10 +24,7 @@ app.use('/', htmlRoutes);
 
 
 
-// app.use(cors({
-//   origin: '*',
-//   methods: ['GET', 'POST', 'DELETE']
-// }));
+
 
 
 sequelize.sync({ force: false }).then(() => {
