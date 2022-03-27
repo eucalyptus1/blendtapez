@@ -1,11 +1,9 @@
 // const { playlists } = require('./data/playlists');
 const express = require('express');
-// const path = require('path');
-
-const sequelize = require('./config/connection');
-// const fs = require('fs');
-
 const PORT = process.env.PORT || 3001;
+const sequelize = require('./config/connection');
+
+
 const app = express();
 // const cors = require('cors');
 
@@ -14,10 +12,10 @@ const htmlRoutes = require('./routes/htmlRoutes');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('/public'));
+app.use(express.static('public'));
 
 app.use('/api', apiRoutes);
-app.use('/html', htmlRoutes);
+app.use('/', htmlRoutes);
 
 
 
