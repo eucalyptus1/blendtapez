@@ -125,7 +125,7 @@ function createTrackEl (trackArr, trackObj) {
 };
 
 // function to submit completed playlist into local storage
-function submitPlaylist(event) {
+const submitPlaylist = event => {
   event.preventDefault();
   // console.log(playlistObj);
   playlistIdCounter += 1;
@@ -149,7 +149,7 @@ function submitPlaylist(event) {
       console.log(postResponse);
     });
   
-  // localStorage.setItem("playlistObj", JSON.stringify(playlistObj));
+  
   
   // document.querySelector("input[name='track-name']").value = "";
 };
