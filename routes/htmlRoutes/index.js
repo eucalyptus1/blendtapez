@@ -1,6 +1,10 @@
 const path = require('path');
 const router = require('express').Router();
 
+router.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../public/profile.html'));
+});
+
 router.get('/playlist', (req, res) => {
   res.sendFile(path.join(__dirname, '../../public/playlist.html'));
 });
